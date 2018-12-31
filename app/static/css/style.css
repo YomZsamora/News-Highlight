@@ -40,3 +40,30 @@ body {
     border: 1px solid #333;
     color: #333;
 }
+
+.header-buttons li a:hover {
+    text-decoration: none;
+}
+
+.story-highlight a {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.story-highlight h6 {
+    font-size: .9rem;
+}
+
+.story-highlight h2 {
+    font-family: 'latoblack', sans-serif;
+}
+
+h6 {
+    font-family: 'latoregular', sans-serif;
+    text-transform: uppercase;
+    color: #e85858;
+    margin: 0;
+    line-height: 25px;
+    font-weight: 400;
+    font-size: 13px;
+}
