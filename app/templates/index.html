@@ -4,8 +4,27 @@
 {% block styles %}
 	{{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/news_logo.png')}}">
 {% endblock %}
 
 {% block content %}
-	<h1>News Highlights</h1>
+	<div class="container">
+		<div class="row">
+			<header class="news-highlight-header clearfix">
+				<h2>News Highlight</h2>
+				<div class="header-buttons">
+					<li>
+						<a href="">Politics</a>
+					</li>
+					<li>
+						<a href="">Africa</a>
+					</li>
+					<li>
+						<a href="">World</a>
+					</li>
+				</div>
+			</header>
+		</div>
+		<!-- <h1>News Highlights</h1> -->
+	</div>
 {% endblock %}
