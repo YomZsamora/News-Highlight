@@ -1,6 +1,13 @@
 /* Main Color : #e85858 */
 
- .news-highlight-header {
+body {
+    font-family: 'latoregular', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.news-highlight-header {
     border-bottom: 1px solid #ccc;
     margin-top: 24px;
     margin-bottom: 24px;
