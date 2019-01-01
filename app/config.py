@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
+    NEWS_HIGHLIGHTS_BASE_URL = 'https://newsapi.org/v2/top-headlines?country={}&apiKey={}'
 
 
 
