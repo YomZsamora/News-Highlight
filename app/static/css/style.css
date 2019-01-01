@@ -45,9 +45,25 @@ body {
     text-decoration: none;
 }
 
+.story-highlight {
+    margin-top: 24px;
+}
+
 .story-highlight a {
     color: #333;
     font-size: 1.5em;
+}
+
+.top-highlight figure {
+    margin-top: 15px;
+}
+
+.top-highlight img {
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .story-highlight h6 {
@@ -56,6 +72,7 @@ body {
 
 .story-highlight h2 {
     font-family: 'latoblack', sans-serif;
+    margin-top: 0px;
 }
 
 h6 {
@@ -66,4 +83,48 @@ h6 {
     line-height: 25px;
     font-weight: 400;
     font-size: 13px;
+}
+
+.medium-highlight figure {
+    float: left;
+    margin: 6px 18px 0 0;
+    max-width: 140px;
+}
+
+.medium-highlight h4 {
+    font-family: 'latobold', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    margin: 0 0 6px;
+}
+
+.story-highlight p {
+    margin-bottom: 0;
+    line-height: 21px;
+}
+
+.medium-highlight img {
+    width: 100%;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.footer p {
+	margin-top:10px;
 }
