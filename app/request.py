@@ -1,21 +1,28 @@
 from app import app
 import datetime
 import urllib.request,json
-from .models import news
+from .models import news,sources
 
 News = news.News
+Sources = sources.Sources
 
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
 # Getting the news base url
-base_url = app.config["NEWS_HIGHLIGHTS_BASE_URL"]
+news_base_url = app.config["NEWS_HIGHLIGHTS_BASE_URL"]
+
+# Getting the sources base url
+sources_base_url = app.config["NEWS_SOURCE_BASE_URL"]
+
+
+
 
 def get_news(country):
 	'''
 	Function that gets the json response to our url request
 	'''
-	get_news_url = base_url.format(country,api_key)
+	get_news_url = news_base_url.format(country,api_key)
 
 	with urllib.request.urlopen(get_news_url) as url:
 		get_news_data = url.read()
@@ -25,13 +32,15 @@ def get_news(country):
 
 		if get_news_response['articles']:
 			news_result_list = get_news_response['articles']
-			news_results = process_results(news_result_list)
+			news_results = process_newsResults(news_result_list)
 
 
 	return news_results
 
 
-def process_results(news_list):
+
+
+def process_newsResults(news_list):
 	'''
 	Function that processes the news results and transforms them to a list of objects
 	'''
@@ -53,3 +62,25 @@ def process_results(news_list):
 			news_results.append(news_object)
 
 	return news_results
+
+
+
+
+def get_sources():
+	'''
+	Function that gets the json response to our url request
+	'''
+	get_sources_url = sources_base_url.format(country,api_key)
+
+	with urllib.request.urlopen(get_sources_url) as url:
+		get_sources_data = url.read()
+		get_sources_response = json.loads(get_sources_data)
+
+		sources_results = None
+
+		if get_sources_response['sources']:
+			sources_result_list = get_sources_response['sources']
+			sources_results = process_newsResults(sources_result_list)
+
+
+	return sources_results
