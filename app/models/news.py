@@ -9,4 +9,4 @@ class News:
         self.publishedAt = publishedAt
         self.content = content
         self.url = url
-        self.img_url = 'https://image.tmdb.org/t/p/w500/'+ img_url
+        self.img_url = img_url

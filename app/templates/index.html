@@ -42,10 +42,11 @@
 				<div class="story-highlight medium-highlight">
 					<div>
 						<figure>
-							<a href=""> <img src="{{url_for('static',filename='images/uhuru.jpg')}}" alt=""></a>
+							<a href=""> <img src="{{ news.img_url }}" alt=""></a>
 						</figure>
-						<h4><a href="">{{ news.title}}</a></h4>
+						<h4><a href="{{ news.url }}">{{ news.title }}</a></h4>
 						<p>{{ news.description }}</p>
+						<p>Published at {{ news.publishedAt }}</p>
 					</div>
 				</div><br><br>
 				{% endfor %}
