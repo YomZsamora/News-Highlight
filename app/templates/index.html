@@ -28,7 +28,13 @@
 		</div>
 		<!-- <h1>News Highlights</h1> -->
 		<div class="row">
-			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<div class="categories-header">
+					<div class="tab">
+						<span class="icon most-read-icon"></span>Categories
+					</div>
+				</div>
+			</div>
 			<div class="col-md-6">
 				<div class="story-highlight top-highlight">
 					<h6>12&nbsp;minutes&nbsp;ago</h6>
@@ -54,10 +60,12 @@
 			</div>
 			<div class="col-md-3">
 				<div class="sidebar-right">
-					<li class="story-highlight sources-highlight">
-						<a href=""><span>News</span></a>&nbsp;
-						<a href="">Speaker expected to declare MPs' seats vacant by Friday</a>
+					{% for source in sources %}
+					<li class="story-highlight sources-highlight line-clamp-2">
+						<a href="{{ source.source_url }}"><span>{{ source.name }}</span></a>&nbsp;
+						<a href="{{ source.source_url }}">{{ source.description }}</a>
 					</li>
+					{% endfor %}
 				</div>
 			</div>
 		</div>

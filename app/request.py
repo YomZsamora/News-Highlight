@@ -70,7 +70,7 @@ def get_sources():
 	'''
 	Function that gets the json response to our url request
 	'''
-	get_sources_url = sources_base_url.format(country,api_key)
+	get_sources_url = sources_base_url.format(api_key)
 
 	with urllib.request.urlopen(get_sources_url) as url:
 		get_sources_data = url.read()
@@ -80,7 +80,26 @@ def get_sources():
 
 		if get_sources_response['sources']:
 			sources_result_list = get_sources_response['sources']
-			sources_results = process_newsResults(sources_result_list)
+			sources_results = process_sourcesResults(sources_result_list)
 
+
+	return sources_results
+
+
+
+
+def process_sourcesResults(sources_list):
+	'''
+	Function that processes the sources results and transforms them to a list of objects
+	'''
+
+	sources_results = []
+	for source_item in sources_list:
+		name = source_item.get('name')
+		description = source_item.get('description')
+		source_url = source_item.get('url')
+
+		source_object = Sources(name,description,source_url)
+		sources_results.append(source_object)
 
 	return sources_results
