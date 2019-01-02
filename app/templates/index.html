@@ -38,33 +38,17 @@
 						<a href=""><img src="{{url_for('static',filename='images/kenyatta.jpg')}}" alt=""></a>
 					</figure>
 				</div>
+				{% for news in country %}
 				<div class="story-highlight medium-highlight">
 					<div>
 						<figure>
 							<a href=""> <img src="{{url_for('static',filename='images/uhuru.jpg')}}" alt=""></a>
 						</figure>
-						<h4><a href="">President Kenyatta's New Year speech</a></h4>
-						<p>President briefs Kenyans on the year's events and urges unity for more growth in 2019.</p>
+						<h4><a href="">{{ news.title}}</a></h4>
+						<p>{{ news.description }}</p>
 					</div>
 				</div><br><br>
-				<div class="story-highlight medium-highlight">
-					<div>
-						<figure>
-							<a href=""> <img src="{{url_for('static',filename='images/uhuru.jpg')}}" alt=""></a>
-						</figure>
-						<h4><a href="">President Kenyatta's New Year speech</a></h4>
-						<p>President briefs Kenyans on the year's events and urges unity for more growth in 2019.</p>
-					</div>
-				</div><br><br>
-				<div class="story-highlight medium-highlight">
-					<div>
-						<figure>
-							<a href=""> <img src="{{url_for('static',filename='images/uhuru.jpg')}}" alt=""></a>
-						</figure>
-						<h4><a href="">President Kenyatta's New Year speech</a></h4>
-						<p>President briefs Kenyans on the year's events and urges unity for more growth in 2019.</p>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 			<div class="col-md-3"></div>
 		</div>
