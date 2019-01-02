@@ -1,4 +1,5 @@
 from app import app
+import datetime
 import urllib.request,json
 from .models import news
 
@@ -43,6 +44,9 @@ def process_results(news_list):
 		content = news_item.get('content')
 		url = news_item.get('url')
 		img_url = news_item.get('urlToImage')
+
+		date_time_obj = datetime.datetime.strptime(publishedAt, '%Y-%m-%dT%H:%M:%SZ')
+		publishedAt = date_time_obj.date()
 
 		if img_url:
 			news_object = News(title,description,publishedAt,content,url,img_url)

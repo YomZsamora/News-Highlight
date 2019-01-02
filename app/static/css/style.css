@@ -17,7 +17,7 @@ body {
     float: left;
     margin-bottom: 7px;
     margin-top: 0px !important;
-    /*font-family: ,sans-serif;*/
+    font-family: 'latoblack', sans-serif;
     font-weight: 400;
     color: #e85858;
     font-size: 45px;
@@ -47,6 +47,11 @@ body {
 
 .story-highlight {
     margin-top: 24px;
+}
+
+.story-highlight:after {
+    content: " ";
+    display: table;
 }
 
 .story-highlight a {
@@ -83,6 +88,13 @@ h6 {
     line-height: 25px;
     font-weight: 400;
     font-size: 13px;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
 }
 
 .medium-highlight figure {
