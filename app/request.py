@@ -1,10 +1,11 @@
 from app import app
 import datetime
 import urllib.request,json
-from .models import news,sources
+from .models import news,sources,entertainment
 
 News = news.News
 Sources = sources.Sources
+Entertainment = entertainment.Entertainment
 
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
@@ -110,9 +111,45 @@ def process_sourcesResults(sources_list):
 
 
 
-def getEntertainmentNews(entertainment_list):
+def getEntertainmentNews(category):
 	'''
 	Function that processes the entertainment news results and transforms them to a list of objects
 	'''
 
-	
+	get_entertainmentNews_url = entertainment_base_url.format(category,api_key)
+
+	with urllib.request.urlopen(get_entertainmentNews_url) as url:
+		get_entertainmentNews_data = url.read()
+		get_entertainmentNews_response = json.loads(get_entertainmentNews_data)
+
+		entertainmentNews_results = None
+
+		if get_entertainmentNews_response['articles']:
+			entertainmentNews_result_list = get_entertainmentNews_response['articles']
+			entertainmentNews_results = process_EntertainmentNews_Results(entertainmentNews_result_list)
+
+
+	return entertainmentNews_results
+
+
+
+
+def process_EntertainmentNews_Results(entertainmentNews_result_list):
+	'''
+	Function that processes the sources results and transforms them to a list of objects
+	'''
+
+	entertainmentNews_results = []
+	for entertainment_item in entertainmentNews_result_list:
+		name = entertainment_item.get('name')
+		description = entertainment_item.get('description')
+		publishedAt = entertainment_item.get('publishedAt')
+		source_url = entertainment_item.get('url')
+
+		date_time_obj = datetime.datetime.strptime(publishedAt, '%Y-%m-%dT%H:%M:%SZ')
+		publishedAt = date_time_obj.date()
+
+		entertainmentNews_object = Entertainment(name,description,publishedAt,source_url)
+		entertainmentNews_results.append(entertainmentNews_object)
+
+	return entertainmentNews_results

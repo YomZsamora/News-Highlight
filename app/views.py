@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_news,get_sources
+from .request import get_news,get_sources,getEntertainmentNews
 
 # Views
 @app.route('/')
@@ -12,4 +12,5 @@ def index():
     title = 'Home - News Highlight'
     country_news = get_news('us')
     news_source = get_sources()
-    return render_template('index.html', title = title, country = country_news, sources = news_source)
+    entertainment_news = getEntertainmentNews('entertainment')
+    return render_template('index.html', title = title, country = country_news, sources = news_source, entertainment = entertainment_news)

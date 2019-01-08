@@ -35,12 +35,14 @@
 					</div>
 				</div>
 					<div class="content">
+						{% for news in entertainment %}
 						<li class="entertainment-item">
 							<a href="">
 								<span class="entertainment-number">1</span>
-								<span class="entertainment-headline"><span>News</span> Ethiopian passenger plane skids off Entebbe runway</span>
+								<span class="entertainment-headline"><span>{{ news.publishedAt }}</span> {{ news.description }}</span>
 							</a>
 						</li>
+						{% endfor %}
 					</div>
 			</div>
 			<div class="col-md-6">
