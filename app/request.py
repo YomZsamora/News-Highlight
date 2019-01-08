@@ -15,6 +15,9 @@ news_base_url = app.config["NEWS_HIGHLIGHTS_BASE_URL"]
 # Getting the sources base url
 sources_base_url = app.config["NEWS_SOURCE_BASE_URL"]
 
+# Getting the entertainment news base url
+entertainment_base_url = app.config["NEWS_ENTERTAINMENT_BASE_URL"]
+
 
 
 
@@ -103,3 +106,13 @@ def process_sourcesResults(sources_list):
 		sources_results.append(source_object)
 
 	return sources_results
+
+
+
+
+def getEntertainmentNews(entertainment_list):
+	'''
+	Function that processes the entertainment news results and transforms them to a list of objects
+	'''
+
+	
