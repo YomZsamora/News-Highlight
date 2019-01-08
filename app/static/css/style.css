@@ -172,3 +172,64 @@ li.sources-highlight {
     text-transform: uppercase;
     font-size: 12.5px;
 }
+
+.categories-sidebar {
+    border-bottom: 7px solid #333;
+    margin-top: 1em;
+}
+
+.heading {
+    background: #e85858;
+    padding: 6px 16px 4px;
+    display: inline-block;
+    margin-left: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: 'latoBold', sans-serif;
+    font-weight: 400;
+}
+
+.content li {
+    list-style-type: none;
+}
+
+.entertainment-item {
+    padding: 12px 0 0;
+    clear: both;
+}
+
+.entertainment-number {
+    font-family: 'latoBold', sans-serif;
+    font-weight: 400;
+    font-size: 41px;
+    float: left;
+    margin: 0 12px 0 0;
+    line-height: 1.18em;
+}
+
+.entertainment-headline {
+    font-family: 'latoregular', sans-serif;
+    font-weight: 400;
+    line-height: 21px;
+    display: block;
+}
+
+.entertainment-headline {
+    font-family: 'latoregular', sans-serif;
+    font-weight: 400;
+    line-height: 21px;
+    display: block;
+}
+
+.entertainment-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.entertainment-headline span {
+    color: #e85858 !important;
+    font-family: 'latoBold', sans-serif;
+    text-transform: uppercase;
+}
