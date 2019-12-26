@@ -11,7 +11,7 @@ class MovieTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.entertainment_news = Entertainment('Axios','Axios are a new media company delivering vital, trustworthy news and analysis in the most efficient, illuminating and shareable ways possible.','12-12-18','https://www.axios.com')
+        self.entertainment_news = Entertainment(1,'Axios','Axios are a new media company delivering vital, trustworthy news and analysis in the most efficient, illuminating and shareable ways possible.','12-12-18','https://www.axios.com')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.entertainment_news,Entertainment))

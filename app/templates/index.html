@@ -14,6 +14,9 @@
 			<header class="news-highlight-header clearfix">
 				<h2>News Highlight</h2>
 				<div class="header-buttons">
+					<li style="margin-top: 0">
+						<input type="text" class="form-control" name="searchNews" autocomplete="off" placeholder="Search News...">
+					</li>
 					<li>
 						<a href="">Politics</a>
 					</li>
@@ -38,7 +41,7 @@
 						{% for news in entertainment %}
 						<li class="entertainment-item">
 							<a href="">
-								<span class="entertainment-number">1</span>
+								<span class="entertainment-number">{{ news.idNumber }}</span>
 								<span class="entertainment-headline"><span>{{ news.publishedAt }}</span> {{ news.description }}</span>
 							</a>
 						</li>

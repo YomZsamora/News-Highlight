@@ -20,8 +20,6 @@ sources_base_url = app.config["NEWS_SOURCE_BASE_URL"]
 entertainment_base_url = app.config["NEWS_ENTERTAINMENT_BASE_URL"]
 
 
-
-
 def get_news(country):
 	'''
 	Function that gets the json response to our url request
@@ -40,8 +38,6 @@ def get_news(country):
 
 
 	return news_results
-
-
 
 
 def process_newsResults(news_list):
@@ -138,7 +134,7 @@ def process_EntertainmentNews_Results(entertainmentNews_result_list):
 	'''
 	Function that processes the sources results and transforms them to a list of objects
 	'''
-
+	idNumber = 1
 	entertainmentNews_results = []
 	for entertainment_item in entertainmentNews_result_list:
 		name = entertainment_item.get('name')
@@ -149,7 +145,9 @@ def process_EntertainmentNews_Results(entertainmentNews_result_list):
 		date_time_obj = datetime.datetime.strptime(publishedAt, '%Y-%m-%dT%H:%M:%SZ')
 		publishedAt = date_time_obj.date()
 
-		entertainmentNews_object = Entertainment(name,description,publishedAt,source_url)
+
+		entertainmentNews_object = Entertainment(idNumber,name,description,publishedAt,source_url)
 		entertainmentNews_results.append(entertainmentNews_object)
+		idNumber=idNumber+1
 
 	return entertainmentNews_results
