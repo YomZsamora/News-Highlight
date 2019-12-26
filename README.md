@@ -2,7 +2,7 @@
 
 An application that lists news articles from various sources and helps the busy people to keep up with the current affairs.
 
-![news-Highlight.png](https://i.postimg.cc/PxG32HS3/news-Highlight.png)](https://postimg.cc/d7BjVbPr)
+[![news-Highlight.png](https://i.postimg.cc/PxG32HS3/news-Highlight.png)](https://postimg.cc/d7BjVbPr)
 
 ## Description
 This application is developed to help a user to go through everyday's highlights. User can follow the link to the source in case he/she wants to read the full article about any news. User can see the image, description and the time a news article was created. User can select a news source from various news sources and can read all the news articles from that particular source.

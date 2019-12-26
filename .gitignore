@@ -1,4 +1,5 @@
 virtual/
+venv/
 *.pyc
 instance/
 README.md
